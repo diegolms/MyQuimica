@@ -1,0 +1,20 @@
+!SESSION 2012-11-12 09:37:21.618 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.7.0
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.java.product
+
+!ENTRY com.android.ide.eclipse.ddms 4 0 2012-11-12 09:38:45.042
+!MESSAGE DDMS files not found: C:\eclipse\platform-tools\adb.exe C:\eclipse\tools\hprof-conv.exe C:\eclipse\tools\traceview.bat 
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-11-12 09:39:16.186
+!MESSAGE pingUsageServer failed
+!STACK 0
+java.lang.NullPointerException
+	at com.android.ide.eclipse.adt.internal.welcome.AdtStartup.getVersion(AdtStartup.java:166)
+	at com.android.ide.eclipse.adt.internal.welcome.AdtStartup.pingUsageServer(AdtStartup.java:176)
+	at com.android.ide.eclipse.adt.internal.welcome.AdtStartup.access$2(AdtStartup.java:174)
+	at com.android.ide.eclipse.adt.internal.welcome.AdtStartup$3.run(AdtStartup.java:151)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
