@@ -12,6 +12,7 @@ import org.anddev.andengine.engine.handler.timer.TimerHandler;
 import org.anddev.andengine.engine.options.EngineOptions;
 import org.anddev.andengine.engine.options.EngineOptions.ScreenOrientation;
 import org.anddev.andengine.engine.options.resolutionpolicy.FillResolutionPolicy;
+import org.anddev.andengine.engine.options.resolutionpolicy.RatioResolutionPolicy;
 import org.anddev.andengine.entity.IEntity;
 import org.anddev.andengine.entity.modifier.IEntityModifier.IEntityModifierListener;
 import org.anddev.andengine.entity.modifier.LoopEntityModifier;
@@ -83,8 +84,8 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 public class MyQuimicaActivity extends BaseGameActivity implements
 IOnMenuItemClickListener, IOnAreaTouchListener{
 
-	private int CAMERA_WIDTH;
-	private int CAMERA_HEIGHT;
+	private static final int CAMERA_WIDTH = 1024;
+	private static final int CAMERA_HEIGHT = 600;
 
 	private final int MENU_MISTURAR = 0;
 	private final int MENU_LIMPAR = MENU_MISTURAR + 1;
@@ -208,17 +209,12 @@ IOnMenuItemClickListener, IOnAreaTouchListener{
 
 
 	public Engine onLoadEngine() {
-		final DisplayMetrics displayMetrics = new DisplayMetrics();
-		this.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-		CAMERA_WIDTH = displayMetrics.widthPixels;
-		CAMERA_HEIGHT = displayMetrics.heightPixels;
 		this.camera = new Camera(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT);
 		final EngineOptions engineOptions = new EngineOptions(true,
-				ScreenOrientation.LANDSCAPE, new FillResolutionPolicy(),
+				ScreenOrientation.LANDSCAPE, new RatioResolutionPolicy(CAMERA_WIDTH, CAMERA_HEIGHT),
 				this.camera);
 		engineOptions.getTouchOptions().setRunOnUpdateThread(true);
 		return new Engine(engineOptions);
-
 	}
 
 	public void onLoadResources() {

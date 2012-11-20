@@ -48,11 +48,8 @@ import android.widget.EditText;
 
 public class TelaMenuActivity extends BaseGameActivity implements IOnMenuItemClickListener{
 
-	private static int CAMERA_WIDTH;
-	private static int CAMERA_HEIGHT;
-	
-	//private static final int BASE_CAMERA_WIDTH=1280;
-    //private static final int BASE_CAMERA_HEIGHT=800;
+	private static final int CAMERA_WIDTH = 1024;
+	private static final int CAMERA_HEIGHT = 600;
 	
 	protected static final int MENU_NOVOJOGO = 0;
 	protected static final int MENU_INSTRUCOES = MENU_NOVOJOGO + 1;
@@ -80,16 +77,12 @@ public class TelaMenuActivity extends BaseGameActivity implements IOnMenuItemCli
 
 
 	public Engine onLoadEngine() {
-		final DisplayMetrics displayMetrics = new DisplayMetrics();
-		this.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-		CAMERA_WIDTH = displayMetrics.widthPixels;
-		CAMERA_HEIGHT = displayMetrics.heightPixels;
 		this.mCamera = new Camera(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT);
-		return new Engine(new EngineOptions(true, ScreenOrientation.LANDSCAPE, new FillResolutionPolicy(), this.mCamera));
-		
-//		this.mCamera = new Camera(0, 0, BASE_CAMERA_WIDTH, BASE_CAMERA_HEIGHT);
-//        return new Engine(new EngineOptions(true, ScreenOrientation.LANDSCAPE, new FillResolutionPolicy(), this.mCamera));
-//        
+		final EngineOptions engineOptions = new EngineOptions(true,
+				ScreenOrientation.LANDSCAPE, new RatioResolutionPolicy(CAMERA_WIDTH, CAMERA_HEIGHT),
+				this.mCamera);
+		engineOptions.getTouchOptions().setRunOnUpdateThread(true);
+		return new Engine(engineOptions);  
         
 		
 	}

@@ -7,6 +7,7 @@ import org.anddev.andengine.engine.camera.Camera;
 import org.anddev.andengine.engine.options.EngineOptions;
 import org.anddev.andengine.engine.options.EngineOptions.ScreenOrientation;
 import org.anddev.andengine.engine.options.resolutionpolicy.FillResolutionPolicy;
+import org.anddev.andengine.engine.options.resolutionpolicy.RatioResolutionPolicy;
 import org.anddev.andengine.entity.Entity;
 import org.anddev.andengine.entity.scene.Scene;
 import org.anddev.andengine.entity.scene.background.ColorBackground;
@@ -43,8 +44,8 @@ import android.widget.EditText;
 
 public class TelaFinalActivity extends BaseGameActivity {
 
-	private static int CAMERA_WIDTH;
-	private static int CAMERA_HEIGHT;
+	private static final int CAMERA_WIDTH = 1024;
+	private static final int CAMERA_HEIGHT = 600;
 
 	protected Camera mCamera;
 
@@ -79,12 +80,12 @@ public class TelaFinalActivity extends BaseGameActivity {
 	}
 
 	public Engine onLoadEngine() {
-		final DisplayMetrics displayMetrics = new DisplayMetrics();
-		this.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-		CAMERA_WIDTH = displayMetrics.widthPixels;
-		CAMERA_HEIGHT = displayMetrics.heightPixels;
 		this.mCamera = new Camera(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT);
-		return new Engine(new EngineOptions(true, ScreenOrientation.LANDSCAPE, new FillResolutionPolicy(), this.mCamera));
+		final EngineOptions engineOptions = new EngineOptions(true,
+				ScreenOrientation.LANDSCAPE, new RatioResolutionPolicy(CAMERA_WIDTH, CAMERA_HEIGHT),
+				this.mCamera);
+		engineOptions.getTouchOptions().setRunOnUpdateThread(true);
+		return new Engine(engineOptions);
 
 	}
 
