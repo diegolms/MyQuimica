@@ -44,6 +44,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class TelaMenuActivity extends BaseGameActivity implements IOnMenuItemClickListener{
@@ -55,9 +56,7 @@ public class TelaMenuActivity extends BaseGameActivity implements IOnMenuItemCli
 	protected static final int MENU_INSTRUCOES = MENU_NOVOJOGO + 1;
 	protected static final int MENU_QUIT = MENU_INSTRUCOES + 1;
 
-
-	protected Camera mCamera;
-	
+	protected Camera mCamera;	
 
 	protected Scene mMainScene;
 
@@ -132,6 +131,7 @@ public class TelaMenuActivity extends BaseGameActivity implements IOnMenuItemCli
 
 	}
 
+		
 	public boolean onMenuItemClicked(MenuScene pMenuScene, IMenuItem pMenuItem,	float pMenuItemLocalX, float pMenuItemLocalY) {
 		switch(pMenuItem.getID()) {
 		case MENU_NOVOJOGO:
@@ -153,12 +153,11 @@ public class TelaMenuActivity extends BaseGameActivity implements IOnMenuItemCli
 
 	protected MenuScene createMenuScene() {
 		final MenuScene menuScene = new MenuScene(this.mCamera);
-
+		
 		final SpriteMenuItem novoJogoMenuItem = new SpriteMenuItem(MENU_NOVOJOGO, this.mNovoJogoTextureRegion);
 		novoJogoMenuItem.setBlendFunction(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
 		menuScene.addMenuItem(novoJogoMenuItem);
-
-
+		
 		final SpriteMenuItem novoJogoAlpha = new SpriteMenuItem(4, this.mMenuAlphaAux);
 		menuScene.addMenuItem(novoJogoAlpha);
 
@@ -169,15 +168,14 @@ public class TelaMenuActivity extends BaseGameActivity implements IOnMenuItemCli
 		final SpriteMenuItem comoJogarAlpha = new SpriteMenuItem(5,  this.mMenuAlphaAux);
 		menuScene.addMenuItem(comoJogarAlpha);
 
-
-		final SpriteMenuItem sairMenuItem = new SpriteMenuItem(MENU_QUIT, this.mSairTextureRegion);
+		final SpriteMenuItem sairMenuItem = new SpriteMenuItem(MENU_QUIT, this.mSairTextureRegion);		
 		sairMenuItem.setBlendFunction(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
 		menuScene.addMenuItem(sairMenuItem);
-
+		
 		menuScene.setPosition(-10, -50);
 
 		menuScene.buildAnimations();
-
+				
 		menuScene.setBackgroundEnabled(false);
 
 		menuScene.setOnMenuItemClickListener(this);

@@ -3,5 +3,11 @@
 
     <string name="hello">Hello World, MyQuimicaActivity!</string>
     <string name="app_name">MyQuimica</string>
+    
+     <string-array name="opcoes">
+      <item>Créditos</item>
+      <item>Voltar</item>
+ 
+</string-array>
 
 </resources>

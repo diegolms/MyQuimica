@@ -206,6 +206,9 @@ IOnMenuItemClickListener, IOnAreaTouchListener{
 	Jogador j;
 	private BitmapTextureAtlas dicaNormalTexture;
 	private TextureRegion dicaNormalTextureRegion;
+	private BitmapTextureAtlas interrogacao;
+	private TextureRegion interrogacaoTextureRegion;
+	private Sprite interrogacaoDica;
 
 
 	public Engine onLoadEngine() {
@@ -276,6 +279,9 @@ IOnMenuItemClickListener, IOnAreaTouchListener{
 		maoDireitaTextureRegion= BitmapTextureAtlasTextureRegionFactory.createFromAsset(maoDireita, this, "MaozinhaDireita.png", 0 ,0);
 		maoEsquerdaTextureRegion= BitmapTextureAtlasTextureRegionFactory.createFromAsset(maoEsquerda, this, "MaozinhaEsquerda.png", 0 ,0);
 
+		interrogacao = new BitmapTextureAtlas(256,256, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
+		interrogacaoTextureRegion= BitmapTextureAtlasTextureRegionFactory.createFromAsset(interrogacao, this, "interrogacao_1.png", 0 ,0);
+
 		elemento = new BitmapTextureAtlas(64,64, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
 		elementoTextureRegion= BitmapTextureAtlasTextureRegionFactory.createFromAsset(elemento, this, "elemento.png", 0 ,0);
 
@@ -320,6 +326,8 @@ IOnMenuItemClickListener, IOnAreaTouchListener{
 		this.carregarMisturas();
 
 
+
+
 		this.mapaDeElementosDaTabela = new HashMap<Elementos, TextureRegion>();
 
 		for (final Elementos card : Elementos.values()) {
@@ -340,7 +348,7 @@ IOnMenuItemClickListener, IOnAreaTouchListener{
 				this.balaoTexture, this.menuTexture, this.sombraTexture, this.elemento,this.elementoAuxTexture,
 				this.mao,this.maoDireita,maoEsquerda, this.balaoDeInformacoes,this.primeiroDialogo,this.segundoDialogo,
 				this.terceiroDialogo,this.balaoDialogoTuboVazio,this.balaoDialogoRespostaErrada,this.fonteDialogoTexture,
-				this.fumacinhaTexture,this.botaoMisturarTexture,botaoLimparTexture,botaoProximoDesafioTexture,this.dicaNormalTexture);
+				this.fumacinhaTexture,this.botaoMisturarTexture,botaoLimparTexture,botaoProximoDesafioTexture,this.dicaNormalTexture, this.interrogacao);
 		this.mEngine.getFontManager().loadFonts(this.fontScore,
 				this.fontInformacoes, this.fontDesafio, this.fontMenu,
 				this.fontContDesafios,this.font, this.fontDialogos);
@@ -367,6 +375,7 @@ IOnMenuItemClickListener, IOnAreaTouchListener{
 		this.cena.attachChild(quimico);
 		this.cena.attachChild(new Sprite(0, 380,this.tuboVerdeTextureRegion));
 
+
 		explosao = new AnimatedSprite(28, 460, this.explosaoTextureRegion);
 
 		this.animarQuimico();
@@ -384,6 +393,8 @@ IOnMenuItemClickListener, IOnAreaTouchListener{
 		this.novoDesafio();
 		return this.cena;
 	}
+
+
 
 	public void onLoadComplete() {
 
@@ -518,7 +529,9 @@ IOnMenuItemClickListener, IOnAreaTouchListener{
 						cena.detachChild(balaoAnimacaoDialogoQuimico);
 						cena.detachChild(botaoMisturar);
 						cena.attachChild(botaoProximoDesafio);
+						cena.attachChild(interrogacaoDica);
 						cena.registerTouchArea(botaoProximoDesafio);
+						cena.registerTouchArea(interrogacaoDica);
 						//dicaNormal();
 						acabouAnimacao = true;
 					}
@@ -643,6 +656,25 @@ IOnMenuItemClickListener, IOnAreaTouchListener{
 				}
 				return true;
 
+
+			}
+		};
+
+		this.interrogacaoDica = new Sprite(933, 370, this.interrogacaoTextureRegion){
+			@Override
+			public boolean onAreaTouched(final TouchEvent pSceneTouchEvent, final float pTouchAreaLocalX, final float pTouchAreaLocalY) {
+				switch(pSceneTouchEvent.getAction()) {
+				case TouchEvent.ACTION_DOWN:
+					if (!pediuDica) {
+						pediuDica = true;
+						cena.detachChild(balaoDialogoErroEVazio);
+						cena.detachChild(balaoDialogoQuimico);
+						cena.detachChild(textoDialogoQuimico);
+						pedirDica();
+					}
+					break;
+				}
+				return true;
 
 			}
 		};
@@ -1205,35 +1237,6 @@ IOnMenuItemClickListener, IOnAreaTouchListener{
 	@Override
 	public boolean onKeyDown(final int pKeyCode, final KeyEvent pEvent) {
 		if (pKeyCode == KeyEvent.KEYCODE_MENU && pEvent.getAction() == KeyEvent.ACTION_DOWN) {
-			//			final AlertDialog.Builder alertMenu = new AlertDialog.Builder(MyQuimicaActivity.this);
-			//			alertMenu.setTitle("MENU");
-			//			alertMenu.setPositiveButton("CrÃ©ditos", new DialogInterface.OnClickListener() {
-			//				@Override
-			//				public void onClick(DialogInterface dialog, int whichButton) {
-			//					final Dialog dialogCreditos = new Dialog(MyQuimicaActivity.this);
-			//					dialogCreditos.setContentView(R.layout.custom);
-			//					Button sair = (Button) dialogCreditos.findViewById(R.id.ButtonSairCreditos);
-			//					
-			//					sair.setOnClickListener(new View.OnClickListener() {
-			//						
-			//						@Override
-			//						public void onClick(View arg0) {
-			//							dialogCreditos.dismiss();
-			//							
-			//						}
-			//					});
-			//					dialogCreditos.show();
-			//				}
-			//			});
-			//
-			//			alertMenu.setNegativeButton("Sair", new OnClickListener() {
-			//
-			//				@Override
-			//				public void onClick(DialogInterface arg0, int arg1) {
-			//					
-			//				}
-			//			});
-			//			alertMenu.show();
 
 			final Dialog myDialog = new Dialog(MyQuimicaActivity.this);
 			myDialog.setContentView(R.layout.mydialog);
@@ -1258,14 +1261,14 @@ IOnMenuItemClickListener, IOnAreaTouchListener{
 					dialogCreditos.show();
 				}
 			});
-			
+
 			Button buttonSair = (Button) myDialog.findViewById(R.id.buttonSairMenu);
 			buttonSair.setOnClickListener(new View.OnClickListener() {
-				
+
 				@Override
 				public void onClick(View arg0) {
 					myDialog.dismiss();
-					
+
 				}
 			});
 
@@ -1287,7 +1290,7 @@ IOnMenuItemClickListener, IOnAreaTouchListener{
 				}
 			});
 
-			alert.setNegativeButton("NÃ£o", new OnClickListener() {
+			alert.setNegativeButton("NÃO", new OnClickListener() {
 
 				@Override
 				public void onClick(DialogInterface arg0, int arg1) {
@@ -1304,6 +1307,7 @@ IOnMenuItemClickListener, IOnAreaTouchListener{
 
 
 	}
+
 
 	public boolean onMenuItemClicked(final MenuScene pMenuScene,
 			final IMenuItem pMenuItem, final float pMenuItemLocalX,
@@ -1448,6 +1452,21 @@ IOnMenuItemClickListener, IOnAreaTouchListener{
 		this.s = "";
 		this.stringAux = "";
 
+	}
+
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+			ContextMenuInfo menuInfo) {
+		// TODO Auto-generated method stub
+		super.onCreateContextMenu(menu, v, menuInfo);
+		menu.add(0, v.getId(), 0, "Créditos");
+		menu.add(0, v.getId(), 0, "Voltar");
+	}
+
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		return super.onContextItemSelected(item);
 	}
 
 
