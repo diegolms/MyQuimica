@@ -1,10 +1,14 @@
 package br.com.myquimica.models;
 
 public class Jogador {
-	private int id;
+	private long id;
 	private String nome;
 	private int pontos;
 	
+	
+	public Jogador(String nome){
+		this.nome = nome;
+	}
 	
 	public Jogador(int pontos){
 		this.pontos = pontos;
@@ -33,4 +37,14 @@ public class Jogador {
 		this.nome = nome;
 		this.pontos = pontos;
 	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+	
 }

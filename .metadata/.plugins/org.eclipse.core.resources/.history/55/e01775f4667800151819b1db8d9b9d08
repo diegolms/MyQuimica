@@ -1,0 +1,72 @@
+package br.com.myquimica.core;
+
+import java.util.List;
+
+import android.content.Context;
+import br.com.myquimica.database.MyQuimicaDatabaseAdapter;
+import br.com.myquimica.models.Jogador;
+import br.com.myquimica.models.MyQuimicaLog;
+
+public class FController {
+	
+	private static FController instance = null;
+	public static Jogador jogador;
+	public static MyQuimicaLog log;
+	
+
+	private FController(){
+
+	}
+
+	public static FController getInstance(){
+		if(instance == null)
+			instance = new FController();
+		return instance;
+
+	}
+	
+	public void gravarLog(String log, Context context){
+		this.log.setLog(log);
+		this.gravarLog(this.log, context);
+	}
+	
+	public List<Jogador> buscarListaJogadores(Context context){
+		MyQuimicaDatabaseAdapter dbHelper = new MyQuimicaDatabaseAdapter(context);
+		dbHelper.open();
+		List<Jogador> jogadores = dbHelper.buscarListaJogadores();
+		dbHelper.close();
+		return jogadores;
+	}
+	
+	public synchronized long insertJogador(Jogador j, Context context) {
+		MyQuimicaDatabaseAdapter dbHelper = new MyQuimicaDatabaseAdapter(context);
+		dbHelper.open();
+		long id = dbHelper.criarJogador(j);
+		dbHelper.close();
+		return id;
+		
+	}
+	
+	public synchronized void gravarLog(MyQuimicaLog log, Context context) {
+		MyQuimicaDatabaseAdapter dbHelper = new MyQuimicaDatabaseAdapter(context);
+		dbHelper.open();
+		dbHelper.gravarLog(log);
+		dbHelper.close();	
+	}
+	
+	public synchronized void salvarPerfil(List<String> resultPerfil, long jogador_id, Context context) {
+		MyQuimicaDatabaseAdapter dbHelper = new MyQuimicaDatabaseAdapter(context);
+		dbHelper.open();
+		long id = dbHelper.salvarPerfil(resultPerfil, jogador_id);
+		dbHelper.close();
+	}
+	
+	public List<MyQuimicaLog> getLogs(Context context){
+		MyQuimicaDatabaseAdapter dbHelper = new MyQuimicaDatabaseAdapter(context);
+		dbHelper.open();
+		List<MyQuimicaLog> logs = dbHelper.get_logs();
+		dbHelper.close();
+		return jogadores;
+	}
+}
+

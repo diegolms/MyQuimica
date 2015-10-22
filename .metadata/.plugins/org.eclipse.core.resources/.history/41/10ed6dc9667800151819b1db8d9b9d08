@@ -1,0 +1,140 @@
+package br.com.myquimica.database;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteConstraintException;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+import br.com.myquimica.core.Constants;
+import br.com.myquimica.models.Jogador;
+import br.com.myquimica.models.MyQuimicaLog;
+
+public class MyQuimicaDatabaseAdapter {
+	private static final String JOGADOR = "jogador";
+	private static final String LOG = "log";
+	private static final String PERFIL = "perfil";
+	
+	private SQLiteDatabase database;
+	private MyQuimicaDatabaseHelper dbHelper;
+	private Context context;
+	
+	public MyQuimicaDatabaseAdapter(Context context) {
+		this.context = context;
+	}
+
+	public MyQuimicaDatabaseAdapter open() throws SQLException {
+		dbHelper = new MyQuimicaDatabaseHelper(context);
+		database = dbHelper.getWritableDatabase();
+		return this;
+	}
+	
+	public void close() {
+		dbHelper.close();
+	}
+	
+	public List<Jogador> buscarListaJogadores() {
+		Cursor cursor = database.query(JOGADOR,
+				new String[] { "id", "nome", "pontos"},null,null, null, null, null);
+
+		if (cursor.moveToFirst()) {
+			List<Jogador> jogadores = new ArrayList<Jogador>();
+			do {
+				Jogador jogador = new Jogador(
+						cursor.getInt(0), //id
+						cursor.getString(1),//nome 
+						cursor.getInt(2));//pontos, 
+						
+				jogadores.add(jogador);
+			} while (cursor.moveToNext());
+			cursor.close();
+			return jogadores;
+		}
+		if (cursor != null)
+			cursor.close();
+		return null;
+	}
+	
+	public long criarJogador(Jogador j){
+		try{
+			if(j.getId() != 0){
+				return atualizarJogador(j);
+			}
+			ContentValues values = new ContentValues();
+			values.put("nome", j.getNome());
+			values.put("pontos", j.getPontos());
+			return database.insert(JOGADOR, null, values);
+
+		}catch(Exception e){
+			Log.e(Constants.TAG, e.getMessage(), e);
+		}
+		return -1;
+
+	}
+	
+	public long atualizarJogador(Jogador j) {
+		try {
+			ContentValues values = new ContentValues();
+			values.put("id", j.getId());
+			values.put("nome", j.getNome());
+			values.put("pontos", j.getPontos());
+
+			return database.update(JOGADOR, values, "id = " + j.getId(), null);
+		} catch (SQLiteConstraintException e) {
+			return -1;
+		}
+	}
+	
+	public long gravarLog(MyQuimicaLog log){
+		try{
+			ContentValues values = new ContentValues();
+			values.put("jogador_id", log.getJogador_id().getId());
+			values.put("log", log.getLog());
+			return database.insert(LOG, null, values);
+
+		}catch(Exception e){
+			Log.e(Constants.TAG, e.getMessage(), e);
+		}
+		return -1;
+
+	}
+	
+	public long salvarPerfil(List<String> resultPerfil, long jogador_id){
+		try{
+			ContentValues values = new ContentValues();
+			values.put("jogador_id", jogador_id);
+			values.put("ati_ref", resultPerfil.get(0));
+			values.put("sen_int", resultPerfil.get(1));
+			values.put("vis_ver", resultPerfil.get(2));
+			values.put("seq_glo", resultPerfil.get(3));
+		
+			return database.insert(PERFIL, null, values);
+
+		}catch(Exception e){
+			Log.e(Constants.TAG, e.getMessage(), e);
+		}
+		return -1;
+
+	}
+	
+	public List<MyQuimicaLog> get_logs() {
+		Cursor cursor = database.query(LOG,
+				new String[] {"jogador_id", "log"},null,null, null, null, null);
+
+		if (cursor.moveToFirst()) {
+			System.out.println(cursor.getLong(0) +" - "+ cursor.getString(1));
+			} while (cursor.moveToNext());
+			cursor.close();
+			return jogadores;
+		}
+		if (cursor != null)
+			cursor.close();
+		return null;
+	}
+
+	
+}

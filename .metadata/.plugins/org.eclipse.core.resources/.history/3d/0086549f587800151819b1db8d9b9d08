@@ -1,0 +1,579 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView" >
+
+        <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/radioQuestao1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/questao1"
+            android:textStyle="bold"
+            android:id="@+id/questao1" />
+
+        <RadioButton
+            android:id="@+id/questao1a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/questao1a"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/questao1b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/questao1b"
+            android:checked="false" />
+
+    </RadioGroup>
+
+    <RadioGroup
+            android:id="@+id/radioQuestao2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/questao2"
+            android:textStyle="bold"
+            android:id="@+id/questao2" />
+
+        <RadioButton
+            android:id="@+id/questao2a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/questao2a"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/questao2b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/questao2b"
+            android:checked="false" />
+
+    </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao3"
+                    android:textStyle="bold"
+                    android:id="@+id/questao3" />
+
+                <RadioButton
+                    android:id="@+id/questao3a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao3a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao3b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao3b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao4"
+                    android:textStyle="bold"
+                    android:id="@+id/questao4" />
+
+                <RadioButton
+                    android:id="@+id/questao4a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao4a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao4b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao4b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao5"
+                    android:textStyle="bold"
+                    android:id="@+id/questao5" />
+
+                <RadioButton
+                    android:id="@+id/questao5a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao5a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao5b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao5b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao6"
+                    android:textStyle="bold"
+                    android:id="@+id/questao6" />
+
+                <RadioButton
+                    android:id="@+id/questao6a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao6a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao6b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao6b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao7"
+                    android:textStyle="bold"
+                    android:id="@+id/questao7" />
+
+                <RadioButton
+                    android:id="@+id/questao7a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao7a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao7b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao7b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao8"
+                    android:textStyle="bold"
+                    android:id="@+id/questao8" />
+
+                <RadioButton
+                    android:id="@+id/questao8a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao8a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao8b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao8b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao9"
+                    android:textStyle="bold"
+                    android:id="@+id/questao9" />
+
+                <RadioButton
+                    android:id="@+id/questao9a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao9a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao9b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao9b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao10"
+                    android:textStyle="bold"
+                    android:id="@+id/questao10" />
+
+                <RadioButton
+                    android:id="@+id/questao10a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao10a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questa10b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao10b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao11"
+                    android:textStyle="bold"
+                    android:id="@+id/questao11" />
+
+                <RadioButton
+                    android:id="@+id/questao11a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao11a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao11b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao11b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao12"
+                    android:textStyle="bold"
+                    android:id="@+id/questao12" />
+
+                <RadioButton
+                    android:id="@+id/questao12a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao12a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao12b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao12b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao13"
+                    android:textStyle="bold"
+                    android:id="@+id/questao13" />
+
+                <RadioButton
+                    android:id="@+id/questao13a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao13a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao13b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao13b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao14"
+                    android:textStyle="bold"
+                    android:id="@+id/questao14" />
+
+                <RadioButton
+                    android:id="@+id/questao14a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao14a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao14b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao14b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao15"
+                    android:textStyle="bold"
+                    android:id="@+id/questao15" />
+
+                <RadioButton
+                    android:id="@+id/questao15a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao15a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao15b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao15b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao16"
+                    android:textStyle="bold"
+                    android:id="@+id/questao16" />
+
+                <RadioButton
+                    android:id="@+id/questao16a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao16a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao16b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao16b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao17"
+                    android:textStyle="bold"
+                    android:id="@+id/questao17" />
+
+                <RadioButton
+                    android:id="@+id/questao17a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao17a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao17b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao17b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao18"
+                    android:textStyle="bold"
+                    android:id="@+id/questao18" />
+
+                <RadioButton
+                    android:id="@+id/questao18a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao18a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao18b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao18b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao19"
+                    android:textStyle="bold"
+                    android:id="@+id/questao19" />
+
+                <RadioButton
+                    android:id="@+id/questao19a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao19a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questao19b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao19b"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioQuestao20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao20"
+                    android:textStyle="bold"
+                    android:id="@+id/questao20" />
+
+                <RadioButton
+                    android:id="@+id/questao20a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao20a"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/questa20b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questao20b"
+                    android:checked="false" />
+
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

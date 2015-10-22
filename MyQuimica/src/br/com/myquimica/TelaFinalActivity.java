@@ -146,9 +146,9 @@ public class TelaFinalActivity extends BaseGameActivity {
 		this.mMainScene.attachChild(new Sprite(0, 0, this.cenarioTextureRegion));
 
 
-		Text textoFormulaQuimica = new Text(250, 10,this.fontScore, "PARABÉNS");
-		Text textoPontos = new Text(210, 250, this.fontPontos,"Você fez: " +pontos+ " Pontos");
-		Text textoMensagem= new Text(130, 430, this.fontMensagem,"O estudo é a base para o");
+		Text textoFormulaQuimica = new Text(250, 10,this.fontScore, "PARABï¿½NS");
+		Text textoPontos = new Text(210, 250, this.fontPontos,"Vocï¿½ fez: " +pontos+ " Pontos");
+		Text textoMensagem= new Text(130, 430, this.fontMensagem,"O estudo ï¿½ a base para o");
 		Text textoMensagem2= new Text(390, 480, this.fontMensagem,"SUCESSO");
 
 //		this.mMainScene.attachChild(textoFormulaQuimica);
@@ -277,7 +277,7 @@ public class TelaFinalActivity extends BaseGameActivity {
 	
 	private void salvarJogador(String nome, int pontos){
 		Jogador j = new Jogador(nome, pontos);
-		FController.getInstance().insertMandado(j, getApplicationContext());
+		FController.getInstance().insertJogador(j, getApplicationContext());
 		
 	}
 	

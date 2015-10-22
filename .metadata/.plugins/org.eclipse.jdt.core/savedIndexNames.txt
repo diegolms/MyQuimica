@@ -1,0 +1,4 @@
+INDEX VERSION 1.127+/Users/diegolopes/Documents/Diego/Desenvolvimento/Mestrado/MyQuimica/.metadata/.plugins/org.eclipse.jdt.core
+1902019414.index
+1596244531.index
+2862436014.index

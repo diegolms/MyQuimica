@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MyQuimicaActivity!</string>
+    <string name="app_name">MyQuimica</string>
+    
+     <string-array name="opcoes">
+      <item>Créditos</item>
+      <item>Voltar</item>
+ 
+</string-array>
+
+</resources>

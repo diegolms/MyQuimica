@@ -7,7 +7,72 @@
      <string-array name="opcoes">
       <item>Créditos</item>
       <item>Voltar</item>
- 
-</string-array>
+ 	</string-array>
+ 	
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="questao1">1 - Quando estou aprendendo algum assunto novo, gosto de:</string>
+    <string name="questao1a">Primeiramente, discuti-lo com outras pessoas.</string>
+    <string name="questao1b">Primeiramente, refletir sobre ele individualmente.</string>
+    <string name="questao2">2 - Se eu fosse um professor, eu preferiria ensinar uma disciplina:</string>
+    <string name="questao2a">Que trate com fatos e situações reais.</string>
+    <string name="questao2b">Que trate com ideias e teorias.</string>
+    <string name="questao3">3 - Eu prefiro obter novas informações através de:</string>
+    <string name="questao3a">Figuras, diagramas, gráficos ou mapas.</string>
+    <string name="questao3b">Instruções escritas ou informações verbais.</string>
+    <string name="questao4">4 - Quando resolvo problemas de matemática, eu:</string>
+    <string name="questao4a">Usualmente preciso resolvê-los por etapas para então chegar a solução.</string>
+    <string name="questao4b">Usualmente antevejo a solução, mas às vezes me complico para resolver cada uma das etapas.</string>
+    <string name="questao5">5 - Em um grupo de estudo, trabalhando um material difícil, eu provavelmente:</string>
+    <string name="questao5a">Tomo a iniciativa e contribuo com ideias.</string>
+    <string name="questao5b">Assumo uma posição observadora e analiso os fatos.</string>
+    <string name="questao6">6 - Acho mais fácil aprender:</string>
+    <string name="questao6a">A partir de experimentos.</string>
+    <string name="questao6b">A partir de conceitos.</string>
+    <string name="questao7">7 - Ao ler um livro:</string>
+    <string name="questao7a">eu primeiramente observo as figuras e desenhos.</string>
+    <string name="questao7b">eu primeiramente me atento para o texto escrito.</string>
+    <string name="questao8">8 - É mais importante para mim que o professor:</string>
+    <string name="questao8a">Apresente a matéria em etapas sequenciais.</string>
+    <string name="questao8b">Apresente um quadro geral e relacione a matéria com outros assuntos.</string>
+    <string name="questao9">9 - Nas turmas em que já estudei, eu:</string>
+    <string name="questao9a">Fiz amizade com muitos colegas.</string>
+    <string name="questao9b">Fui reservado e fiz amizade com alguns colegas.</string>
+    <string name="questao10">10 - Ao ler textos técnicos ou científicos, eu prefiro:</string>
+    <string name="questao10a">Algo que me ensine como fazer alguma coisa.</string>
+    <string name="questao10b">Algo que me apresente novas ideias para pensar.</string>
+    <string name="questao11">11 - Relembro melhor:</string>
+    <string name="questao11a">O que vejo.</string>
+    <string name="questao11b">O que ouço.</string>
+    <string name="questao12">12 - Eu aprendo:</string>
+    <string name="questao12a">Num ritmo constante, etapa por etapa.</string>
+    <string name="questao12b">Em saltos. Fico confuso(a) por algum tempo e então, repentinamente, tenho um “estalo”.</string>
+    <string name="questao13">13 - Eu prefiro estudar:</string>
+    <string name="questao13a">Em grupo.</string>
+    <string name="questao13b">Sozinho.</string>
+    <string name="questao14">14 - Prefiro a ideia do:</string>
+    <string name="questao14a">Concreto</string>
+    <string name="questao14b">Conceitual.</string>
+    <string name="questao15">15 - Quando vejo um diagrama ou esquema em uma aula, relembro mais facilmente:</string>
+    <string name="questao15a">A figura.</string>
+    <string name="questao15b">O que o professor disse a respeito dela.</string>
+    <string name="questao16">16 - Quando estou aprendendo um assunto novo, eu prefiro:</string>
+    <string name="questao16a">Concentrar-me exclusivamente no assunto, aprendendo o máximo possível.</string>
+    <string name="questao16b">Tentar estabelecer conexões entre o assunto e outros com ele relacionados.</string>
+    <string name="questao17">17 - Normalmente eu sou considerado(a):</string>
+    <string name="questao17a">Extrovertido(a).</string>
+    <string name="questao17b">Reservado(a).</string>
+    <string name="questao18">18 - Prefiro disciplinas que enfatizam:</string>
+    <string name="questao18a">Material concreto (fatos, dados).</string>
+    <string name="questao18b">Material abstrato (conceitos, teorias).</string>
+    <string name="questao19">19 - Quando alguém está me mostrando dados, eu prefiro:</string>
+    <string name="questao19a">Diagramas ou gráficos.</string>
+    <string name="questao19b">Texto sumarizando os resultados.</string>
+    <string name="questao20">20 - Quando estou resolvendo um problema eu:</string>
+    <string name="questao20a">Primeiramente penso nas etapas do processo para chegar a solução.</string>
+    <string name="questao20b">Primeiramente penso nas consequências ou aplicações da solução.</string>
+    <string name="btEnviar">Enviar Formulário</string>
+    <string name="title_activity_main_activity2">MainActivity2Activity</string>
+
 
 </resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+    <ImageView
+        android:id="@+id/ImageView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/logo" />
+
+    <ScrollView
+        android:id="@+id/ScrollView01"
+        android:layout_width="wrap_content"
+        android:layout_height="150px"
+        android:layout_below="@+id/ImageView01" >
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="\n\n  Este jogo foi desenvolvido por Diego Lopes, aluno da UFPB, Campus IV \n     sob a orientação das professoras Ayla Dantas e Pasqueline Scaico." />
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/ButtonSairCreditos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ScrollView01"
+        android:layout_centerHorizontal="true"
+        android:text="Sair" />
+
+</RelativeLayout>
